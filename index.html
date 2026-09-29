@@ -169,6 +169,9 @@
             <symbol id="i-arrow-d" viewBox="0 0 24 24">
                 <path d="M12 5v14M6 13l6 6 6-6" />
             </symbol>
+            <symbol id="i-arrow-u" viewBox="0 0 24 24">
+                <path d="M12 19V5M6 11l6-6 6 6" />
+            </symbol>
             <symbol id="i-download" viewBox="0 0 24 24">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
             </symbol>
@@ -291,9 +294,9 @@
             </div>
         </section>
 
-        <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+<!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-e6d27473-6015-4254-88f6-7c44f8949cd5" data-elfsight-app-lazy></div>
+<div class="elfsight-app-bd5133ec-6fba-4c1c-a263-8554e750294d" data-elfsight-app-lazy></div>
 
         <!-- ABOUT -->
         <section class="about alt" id="about">
@@ -744,10 +747,32 @@
 
     </main>
 
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">
+        <svg class="ic sm"><use href="#i-arrow-u" /></svg>
+    </button>
+
     <footer>
-        <div class="wrap">
-            <span>Olaide Omomeji Christianah</span>
-            <span>People. Growth. Purpose. Influence.</span>
+        <div class="wrap footer-wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="brand" href="#home">Tianah Olaide</a>
+                    <p class="tagline">People. Growth. Purpose. Influence.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#the-next-door">Community</a></li>
+                        <li><a href="#ventures">Brands</a></li>
+                        <li><a href="#thoughts">Philosophy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <script>document.write(new Date().getFullYear())</script> Olaide Omomeji Christianah. All rights reserved.</span>
+            </div>
         </div>
     </footer>
 
@@ -830,6 +855,22 @@
                 document.querySelectorAll('.rv').forEach(function (el) { rv.observe(el); });
             } else {
                 document.querySelectorAll('.rv').forEach(function (el) { el.classList.add('in'); });
+            }
+
+            // Scroll to Top Logic
+            var scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 400) {
+                        scrollTopBtn.classList.add('visible');
+                    } else {
+                        scrollTopBtn.classList.remove('visible');
+                    }
+                }, { passive: true });
+
+                scrollTopBtn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             }
         })();
     </script>

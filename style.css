@@ -1755,18 +1755,74 @@ form .btn {
 }
 
 footer {
-    padding: 2rem 0 3rem;
+    padding: 3.5rem 0 3rem;
     border-top: 1px solid var(--line);
     font-family: var(--sans);
     font-size: .95rem;
-    color: var(--muted)
+    color: var(--muted);
 }
 
-footer .wrap {
+.footer-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: .5rem 2rem
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.footer-brand .brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.2s ease;
+}
+
+.footer-brand .brand:hover {
+    color: var(--accent);
+}
+
+.footer-brand .tagline {
+    margin: 0.35rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.6rem;
+}
+
+.footer-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
 }
 
 @media (max-width: 480px) {
@@ -1798,4 +1854,53 @@ footer .wrap {
     * {
         transition: none !important
     }
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: clamp(1.2rem, 3vw, 2.2rem);
+    right: clamp(1.2rem, 3vw, 2.2rem);
+    z-index: 995;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    border-radius: var(--r);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.9);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease, background 0.2s ease, border-color 0.2s ease;
+    user-select: none;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-top-btn:hover {
+    background: var(--sand);
+    border-color: var(--ink);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.scroll-top-btn:active {
+    transform: scale(0.95);
+}
+
+.scroll-top-btn .ic {
+    transition: transform 0.2s ease;
+}
+
+.scroll-top-btn:hover .ic {
+    transform: translateY(-2px);
 }

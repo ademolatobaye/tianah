@@ -675,7 +675,7 @@ header.nav {
 
 .hero .wrap {
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
+    grid-template-columns: 1.15fr .85fr;
     gap: clamp(2rem, 6vw, 5rem);
     align-items: center
 }
@@ -688,16 +688,27 @@ header.nav {
 }
 
 .hero h1 {
-    font-size: clamp(2.6rem, 6.6vw, 5.2rem);
-    line-height: 1;
-    letter-spacing: -0.035em;
-    max-width: 13ch
+    font-size: clamp(2.3rem, 5.5vw, 4.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    max-width: 22ch
 }
 
 .hero .desc {
-    margin: 1.6rem 0 2rem;
-    font-size: 1.25rem;
-    max-width: 36ch
+    margin: 1.4rem 0 1.8rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 50ch
+}
+
+.hero .cta-label {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 2rem 0 0.85rem;
 }
 
 .four {
